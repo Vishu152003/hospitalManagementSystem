@@ -1,0 +1,51 @@
+.hospital-loader-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff; /* Clean white background */
+}
+
+.hospital-loader-content {
+  text-align: center;
+}
+
+.hospital-logo {
+  width: 150px; /* Adjust size as needed */
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.ecg-line {
+  width: 300px;
+  height: 100px;
+  /* The animation is the key! */
+  animation: ecg-draw 2.5s linear infinite;
+  transform-origin: center left;
+}
+
+@keyframes ecg-draw {
+  0% {
+    stroke-dasharray: 0, 1000; /* Start with the line hidden */
+    stroke-dashoffset: 0; /* Start drawing from the beginning */
+  }
+  50% {
+    stroke-dasharray: 1000, 1000; /* The line is fully drawn */
+    stroke-dashoffset: 0; /* At the end of the line */
+  }
+  100% {
+    stroke-dasharray: 0, 1000; /* The line is hidden again */
+    stroke-dashoffset: -1000; /* Prepares for the next loop */
+  }
+}
+
+.loading-text {
+  margin-top: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333333;
+}
