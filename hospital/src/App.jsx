@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import HospitalLoader from './components/Loader'; 
+import HospitalLoader from './Components/Loader'; 
 
 import Login from './pages/Login';
 import Register from './pages/Register';
